@@ -1,0 +1,17 @@
+{
+  "name": "imagecompress",
+  "version": "1.0.0",
+  "description": "Simple wrapper for imagemin to bulk compress images",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "imagemin-pngquant": "^9.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabor Szabo <szabogabor@hydrogene.hu>",
+  "license": "ISC"
+}
