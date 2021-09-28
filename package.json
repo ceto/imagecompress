@@ -4,6 +4,7 @@
   "description": "Simple wrapper for imagemin to bulk compress images",
   "main": "gulpfile.js",
   "dependencies": {
+    "gifsicle": "^5.2.0",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "imagemin-pngquant": "^9.0.1"
