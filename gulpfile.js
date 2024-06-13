@@ -43,7 +43,7 @@ const arg = (argList => {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
     return gulp.src(arg.dir + '/**/*')
-        .pipe(plumber({errorHandler: onError}))
+        .pipe(plumber())
         .pipe(
             imagemin([
                 imagemin.mozjpeg({
@@ -64,5 +64,6 @@ gulp.task('images', function() {
 				verbose: true
 			})
         )
+        .pipe(plumber.stop())
         .pipe(gulp.dest(arg.dir));
 });
