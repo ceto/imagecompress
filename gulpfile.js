@@ -1,6 +1,13 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var imageminPngquant = require('imagemin-pngquant');
+var plumber = require('gulp-plumber');
+
+// Error checking; produce an error rather than crashing.
+var onError = function(err) {
+  console.log(err.toString());
+  this.emit('end');
+};
 
 
 // fetch command line arguments
@@ -36,6 +43,7 @@ const arg = (argList => {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
     return gulp.src(arg.dir + '/**/*')
+        .pipe(plumber({errorHandler: onError}))
         .pipe(
             imagemin([
                 imagemin.mozjpeg({
