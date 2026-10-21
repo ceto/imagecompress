@@ -1,19 +1,22 @@
 {
   "name": "imagecompress",
-  "version": "1.0.0",
-  "description": "Simple wrapper for imagemin to bulk compress images",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gifsicle": "^5.2.0",
-    "gulp": "^4.0.2",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-plumber": "^1.2.1",
-    "imagemin-pngquant": "^9.0.1"
+  "version": "2.0.0",
+  "description": "Bulk lossy image compression (sharp + svgo), in place",
+  "type": "module",
+  "main": "compress.js",
+  "bin": {
+    "imagecompress": "compress.js"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "images": "node compress.js"
+  },
+  "engines": {
+    "node": ">=20.3"
   },
   "author": "Gabor Szabo <szabogabor@hydrogene.hu>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.35.5",
+    "svgo": "^4.1.0"
+  }
 }
